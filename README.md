@@ -1,2 +1,2 @@
 # Personal-Studies
-Personal Programming Studies like Algorithms, Data Structures, Problem Solving
+Personal Programming Studies like Algorithms, Data Structures, and Problem Solving
