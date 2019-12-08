@@ -39,3 +39,16 @@ int main()
 
     return 0;
 }
+
+/*
+INPUT:
+3
+0
+1
+3
+
+OUTPUT:
+1 0
+0 1
+1 2
+*/
