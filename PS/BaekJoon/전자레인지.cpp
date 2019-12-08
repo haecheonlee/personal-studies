@@ -29,3 +29,13 @@ int main()
     
     return 0;
 }
+
+/*
+boj.kr/10162
+
+INPUT:
+100
+
+OUTPUT:
+0 1 4
+*/
