@@ -10,10 +10,10 @@ int main() {
 	for(int i=0; i<T; i++) {
 		cin>>N>>M;
 		
-		if(N < 13) {
+		if(N < 12 || M < 4) {
 			cout<<-1<<endl;
 		} else {
-			int result = ((N-2) * M) + 4;
+			int result = 11*M + 4;
 			cout<<result<<endl;
 		}
 	}
