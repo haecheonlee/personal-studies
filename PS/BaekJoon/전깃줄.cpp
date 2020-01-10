@@ -24,14 +24,13 @@ int main() {
 	
 	int m=-1;
 	for(int i=0; i<T; i++) {
-		int index=0;
+        DP[i]=1;
 		for(int j=0; j<i; j++) {
-			if(v[i].first>v[j].first&&v[i].second>v[j].second) {
-				index=max(DP[j],index);
+			if(v[i].first>v[j].first&&v[i].second>v[j].second&&DP[i]<DP[j]+1) {
+				DP[i]=DP[j]+1;
 			}
 		}
 
-		DP[i]=(index+1);		
 		m=max(m, DP[i]);
 	}
 	
