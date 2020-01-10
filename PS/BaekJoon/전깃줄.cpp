@@ -12,7 +12,7 @@ int main() {
 	int T,a,b;
 	cin>>T;
 	
-	int DP[T]{0};
+	int DP[T];
 	
 	vector<pair<int,int>> v;
 	for(int i=0; i<T; i++) {
@@ -24,7 +24,7 @@ int main() {
 	
 	int m=-1;
 	for(int i=0; i<T; i++) {
-        DP[i]=1;
+        	DP[i]=1;
 		for(int j=0; j<i; j++) {
 			if(v[i].first>v[j].first&&v[i].second>v[j].second&&DP[i]<DP[j]+1) {
 				DP[i]=DP[j]+1;
