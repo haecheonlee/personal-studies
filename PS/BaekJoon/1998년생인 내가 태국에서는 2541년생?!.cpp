@@ -13,8 +13,6 @@ int main() {
 }
 
 /*
-boj.kr/18108
-
 INPUT:
 2541
 
