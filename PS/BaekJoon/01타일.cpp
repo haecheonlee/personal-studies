@@ -19,8 +19,6 @@ int main() {
 }
 
 /*
-boj.kr/1904
-
 INPUT:
 4
 
