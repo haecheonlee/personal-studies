@@ -1,5 +1,3 @@
-/* Codeforces */
-
 #include <iostream>
 
 using namespace std;
