@@ -92,22 +92,22 @@ int main() {
         int dir;
         cin>>dir;
 
-		if(is_possible(dir)) {
-			rotate(dir);
+	if(is_possible(dir)) {
+		rotate(dir);
 			
-			// 0: top, 2: bottom
-			int &top=dice[position[0]];
-			int &bottom=dice[position[2]];
+		// 0: top, 2: bottom
+		int &top=dice[position[0]];
+		int &bottom=dice[position[2]];
 			
-			if(board[x][y]==0) board[x][y]=bottom;
-			else {
-				bottom=board[x][y];
-				board[x][y]=0;	
-			}
-			
-			cout<<top<<'\n';
+		if(board[x][y]==0) board[x][y]=bottom;
+		else {
+			bottom=board[x][y];
+			board[x][y]=0;	
 		}
+			
+		cout<<top<<'\n';
+	}
     }
-
+	
     return 0;
 }
