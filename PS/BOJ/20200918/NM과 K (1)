@@ -1,0 +1,71 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+using pi=pair<int,int>;
+
+const int MAX=10;
+
+int N,M,K;
+int a[MAX][MAX];
+vector<pair<int,pi>> pos;
+int dx[]={0,0,1,-1};
+int dy[]={1,-1,0,0};
+int ans=-1e9;
+
+bool possible(int x, int y, int ex, int ey) {
+	for(int k=0; k<4; k++) {
+		int nx=dx[k]+x;
+		int ny=dy[k]+y;
+		
+		if(nx==ex && ny==ey) return false;
+	}
+	
+	return true;
+}
+
+void go(int idx, int total, vector<pi>& selection) {
+	if(ans>total+((K-(int)selection.size()) * pos[idx].first)) return;
+	if(selection.size()==K) {
+		ans=max(ans, total);		
+		return;
+	}
+	if(pos.size()==idx) return;
+	
+	bool is_possible=true;
+	for(int i=0; i<selection.size(); i++) {
+		if(possible(selection[i].first, selection[i].second, 
+					pos[idx].second.first, pos[idx].second.second)==false) {
+						is_possible=false;
+						break;
+					}
+	}
+	
+	if(is_possible) {
+		selection.push_back({pos[idx].second.first, pos[idx].second.second});
+		go(idx+1, total+pos[idx].first, selection);
+		selection.pop_back();
+		go(idx+1, total, selection);
+	} else {
+		go(idx+1, total, selection);
+	}
+}
+
+int main() {
+	cin>>N>>M>>K;
+	
+	for(int i=0; i<N; i++) {
+		for(int j=0; j<M; j++) {
+			cin>>a[i][j];
+			pos.push_back({a[i][j], {i,j}});
+		}
+	}
+	
+	sort(pos.rbegin(), pos.rend());
+	vector<pi> selection;
+	go(0, 0, selection);
+	cout<<ans;
+	
+	return 0;
+}
