@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+vector<int> p[26];
+
+int main() {
+	int N; cin >> N;
+	for(int i = 0; i < N; i++) {
+		char x; cin >> x;
+		p[x - 'a'].push_back(i + 1);
+	}
+
+	int M; cin >> M;
+	while(M--) {
+		string ss; cin >> ss;
+		int pp[26] {0};
+		for(auto& x : ss) pp[x - 'a']++;
+		
+		int ans = -1;
+		for(int i = 0; i < 26; i++) {
+			if(pp[i] != 0)	ans = max(ans, p[i][pp[i] - 1]);
+		}
+		cout << ans << '\n';
+	}
+
+	return 0;
+}
