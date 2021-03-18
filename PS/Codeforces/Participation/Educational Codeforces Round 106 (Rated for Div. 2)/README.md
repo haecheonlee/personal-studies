@@ -7,6 +7,6 @@
 ### [1499C]
 - (WA) My idea was as closer as the solution, but failed in implementation
 
-[1497A]: <https://codeforces.com/contest/1497/problem/A>
-[1497C1]: <https://codeforces.com/contest/1497/problem/C1>
-[1497C2]: <https://codeforces.com/contest/1497/problem/C2>
+[1499A]: <https://codeforces.com/contest/1499/problem/A>
+[1499B]: <https://codeforces.com/contest/1499/problem/B>
+[1499C]: <https://codeforces.com/contest/1499/problem/C>
