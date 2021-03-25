@@ -4,7 +4,7 @@
 - a math problem. I was a little confused when (x % n == 0)
 ### [1506B] 
 - I misused variables, so got 2 WA. I have to practice in coding in proper way
-### [1507C]
+### [1506C]
 - I solved it with dp. But I didn't consider when both string has no same character; it should be empty for both
 ### [1506D]
 - Used pq for decrementing the first and second elements in the list
