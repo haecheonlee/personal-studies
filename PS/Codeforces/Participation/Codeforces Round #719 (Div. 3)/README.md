@@ -9,7 +9,7 @@
 ### [1520D] 
 - Tried to look for a[i] - a[j] == i - j
 ### [1520G] 
-- Dijkstra with brute-forcing search
+- Dijkstra with brute-forcing search. Hacekd for time limit.
 
 [1520A]: <https://codeforces.com/contest/1520/problem/A>
 [1520B]: <https://codeforces.com/contest/1520/problem/B>
