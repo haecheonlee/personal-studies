@@ -22,7 +22,7 @@ ll ans = 0;
 int N, M;
 int a[MAX_N][MAX_N];
 bool check[MAX_N][MAX_N], grouped[MAX_N][MAX_N];
-vector<pair<vector<pii>, int>> G;
+vector<vector<pii>> G;
 int dx[] = {0, 0, -1, 1};
 int dy[] = {1, -1, 0, 0};
 
@@ -55,7 +55,6 @@ void fall() {
 void bfs(int sx, int sy) {
     memset(check, false, sizeof(check));
 
-    pair<vector<pii>, int> block;
     vector<pii> g;
 
     int color = a[sx][sy];
@@ -87,10 +86,7 @@ void bfs(int sx, int sy) {
     }
 
     // making a new group of block
-    block.fi = g;
-    block.sc = color;
-
-    G.push_back(block);
+    G.push_back(g);
 }
 
 bool go() {
@@ -105,10 +101,10 @@ bool go() {
     int idx = -1, cnt = -1, rainbow = -1, px = -1, py = -1; 
     for(int i = 0; i < sz(G); i++) {
         // must be more than 2 blocks in a group
-        if(sz(G[i].fi) <= 1) continue;
+        if(sz(G[i]) <= 1) continue;
 
-        int cntBlock = sz(G[i].fi), cntRainbow = 0, bx = N + 1, by = N + 1;
-        for(auto& g : G[i].fi) {
+        int cntBlock = sz(G[i]), cntRainbow = 0, bx = N + 1, by = N + 1;
+        for(auto& g : G[i]) {
             int x = g.fi, y = g.sc;
 
             if(a[x][y] == 0) {
@@ -146,10 +142,10 @@ bool go() {
     if(idx == -1) return false;
 
     // add to the ans
-    ans += (sz(G[idx].fi) * sz(G[idx].fi));
+    ans += (sz(G[idx]) * sz(G[idx]));
 
     // remove from the map
-    for(auto& g : G[idx].fi) a[g.fi][g.sc] = -2;
+    for(auto& g : G[idx]) a[g.fi][g.sc] = -2;
 
     // gravity
     fall();
